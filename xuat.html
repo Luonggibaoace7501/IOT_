@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LƯƠNG GIA BẢO</title>
+    <link rel="stylesheet" type="text/css" href="xuat.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css">
+</head>
+    <body onload="hienthithoigian()">
+      <section class="logo">
+        <img aligh="center" src="hinh anh/logo.png">   
+      </section> 
+        <br>
+      <h1 style=" padding-top: 20px;font-size:40px;text-align:center; color:firebrick;">HỆ THỐNG GIÁM SÁT MỰC NƯỚC</h1>
+      <div id= "right">
+        <br>
+        <br>
+        <div id="button_text">
+          <div id="main-content">
+            <div id="content">
+              <table>
+                <tr>
+                  <th>MỰC NƯỚC</th>
+                  <th>THỂ TÍCH</th>
+                </tr>
+                <tr>
+                  <td><span id="cao"></span></td>
+                  <td><span id="thetich"></span></td>   
+                </tr>
+              </table>
+                <img id="denId_01" src="hinh anh/tắt.png" >
+                <button id="btnOnId_01">On</button>
+                <button id="btnOffId_01">OFF</button> 
+                <br><br>
+                <h3 style="color:brown">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;BƠM</h3>   
+            </div>
+
+            <div id="siderbar"> 
+                <img id="bon_01" style="width:200px;height:258px;">
+                <i><h5 aligh="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hình ảnh minh họa</h5></i>
+            </div>
+          </div>
+        </div>
+      </div> 
+        <br>
+    </body>
+    
+    
+<!-- .......................................................................................................................................................... -->
+  <script>
+  function hienthithoigian(){
+      const t = new Date();
+      let h = t.getHours();
+      let m = t.getMinutes();
+      let s = t.getSeconds();
+      m = dinhdang2so(m);
+      s = dinhdang2so(s);
+      document.getElementById("thoigian").innerHTML = h + ":" + m + ":"+ s;
+      setTimeout(hienthithoigian);
+  }               
+  function dinhdang2so(x){
+      if (x<10)
+           x="0" + x;
+      return x;   
+   }
+  </script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+           <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+          <!-- lien ket voi functions.js -->
+     <script src='demo.js'></script>
+     <script type="module"></script>
+    </html>
