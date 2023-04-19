@@ -40,7 +40,7 @@ const firebaseConfig = {
      firebase.database().ref("/muc_nuoc/led").on("value", function(snapshot){
       var ss = snapshot.val();
       if (ss==1){
-      document.getElementById("denId_01").src = "./hinhanh/sang.png";
+      document.getElementById("denId_01").src = "hinhanh/sang.png";
     }
       else{
       document.getElementById ("denId_01").src="hinhanh/tat.png"
